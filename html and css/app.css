@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 110px;
+}
+h1{
+    font-weight:bold ;
+}
+p{
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: .5px;
+    margin: 10px;
+    
+}
+
+span{
+    font-size: 12px;
+    margin: 10px;
+}
+a{
+    color: brown;
+    font-size: medium;
+    text-decoration: none;
+    margin: 10px;
+}
+.container{
+    background-color: whitesmoke;
+    border-radius: 30px;
+    box-shadow: 0px 15px 30px pink;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    height: 800px;
+    padding:20px 15px;
+    margin:5px 20px;
+    border: pink 1px solid;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: whitesmoke;
+
+}
+input{
+    border: 0;
+    background:wheat;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 15px 10px;
+    outline: none;
+    color: rgb(248, 248, 255);
+    border-radius: 30px;
+    width: auto;
+    color:black;
+}
+input:focus{
+    width: 280px;
+    border:  rgba(238, 91, 65, 0.884) 3px solid;
+}
+button{
+    border-radius: 30px;
+    border: 1px solid darkorange;
+    background-color: darkorange;
+    color: ghostwhite;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 22px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 100ms ease-in-out;
+}
+button:hover{
+    background-color: rgba(238, 91, 65, 0.884);
+    border: 1px solid  rgba(238, 91, 65, 0.884);
+    overflow: hidden;
+}
+button:focus{
+    outline: none;
+}
+button:active{
+    transform: scale(.8);
+}
+.signin{
+    left: 50px;
+}
+.container .signin{
+    left: 50px;
+}
+#signup{
+    position: relative;
+    top: 4440px;
+}
+.signin{
+    text-align: center;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#signup{
+    text-align: center;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#signup p{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}

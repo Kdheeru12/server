@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+<body>
+    <input type="hidden" value="{{user.username}}" name="phonenumber">
+    
+    <h1>My Orders</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>name</th>
+            <th>phonenumber</th>
+            <th>address</th>
+            <th>ordered</th>
+            </tr>            
+        </thead>
+        <tbody>
+            {%for Orders  in orders %}
+            <tr>
+                <td> {{Orders.name}} </td>
+                <td> {{Orders.phonenumber}} </td>
+                <td> {{Orders.address}} </td>
+                <td> <a href="{{Orders.ordered}}">do</a></td>
+            </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,144 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+    <!--Ion Icons-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <!--Our own stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="index.html">
+                        <img src="./image" alt="">
+                    </a>
+                    <h1>
+                        Website
+                    </h1>
+                </div>
+                <div class="menu-icons open">
+                    <i class="icon ion-md-menu"></i>
+                </div>
+                <ul class="nav-list">
+                    <div class="menu-icons close">
+                        <i class="icon ion-md-close"></i>
+                    </div>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link current">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="main-message">
+                    <h3>Best Way to</h3>
+                    <h1>Shop</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid qui labore recusandae! Earum fugit magnam, facilis expedita labore atque quo inventore doloribus? Minima accusantium amet cupiditate fugiat atque, ab adipisci?
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="experience-outdoors">
+            <div class="container">
+                <div class="title-heading">
+                    <h3>We Offer</h3>
+                    <h1>A Best Shopping experrince</h1>
+                    <div class="contain" id="contain">
+                        <div class="signup" id="signup">
+                            <form action="signup" method="POST">
+                                {% csrf_token %}
+                                <input type="text" placeholder="Firstname" class="first" onkeyup="letters(this)" required class="letters" name="first" >
+                                <input type="text" placeholder="LastName" class="last" onkeyup="letters(this)" class="letters" name="last" >
+                                <input type="text" placeholder="Phone Number" class="phone" pattern="[6-9]{1}[0-9]{9}" required name="phonenum" >
+                                <div>
+                                    {% for message in messages%}
+                                    <span class="message">{{message}}</span>
+                                    {% endfor %}
+                                </div>
+                                <input type="email" placeholder="Email_Id" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required name="email" >
+                                <input type="password" value="" id="myInput" placeholder="Password" required name="password">
+                                <p id="span">Show Password</p>
+                                <input type="checkbox" onclick="myFunction()" class="checkbox">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                            
+                            <div >
+                                <p>
+                                    To Keep connected please login
+                                     <a href="login"><button type="button">Sign In</button></a>
+                                </p>
+                               
+                            </div>
+                        </div>       
+                    </div>
+                    
+                    <script>
+                        
+                        function letters(letters){
+                            var regex = /[^a-z]/gi;
+                            letters.value = letters.value.replace(regex,"");
+                        }
+                        function myFunction() {
+                            var x = document.getElementById("myInput");
+                            if (x.type === "password") {
+                              x.type = "text";
+                            } else {
+                              x.type = "password";
+                            }
+                        }
+                    </script>
+
+                </div> 
+            </div>
+        </section>
+        <section class="created">
+            <div class="container">
+                <div class="create">
+                    <div class="created-message">
+                        <p>
+                            give It a try open chrome ang g to the website
+                        </p>
+                        <i class="icon ion-md-quote"></i>
+                    </div>
+                    <div class="created-message">
+                        <p>
+                            give It a try open chrome ang g to the website
+                        </p>
+                        <i class="icon ion-md-quote"></i>
+                    </div>
+                    <div class="image">
+                        <img src="{% static 'css/images/Doraemon.png' %}" alt="">
+                        <h1>K.Dheeraj Reddy</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2019 Website. All rights reserved</p>
+    <script type="text/javascript" src="{% static 'css/scripts.js' %}"></script>
+</body>
+</html>
